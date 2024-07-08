@@ -1,0 +1,18 @@
+Entry_Time=input()
+Exit_Time=input()
+Entry_List=Entry_Time.split(":")
+Exit_List=Exit_Time.split(":")
+sum1=int(Entry_List[0])*60*60+int(Entry_List[1])*60+int(Entry_List[2])
+sum2=int(Exit_List[0])*60*60+int(Exit_List[1])*60+int(Exit_List[2])
+val=sum2-sum1
+hour=val//3600
+output=""
+if(hour<10):
+    output=output+"0"+str(hour)+":"
+else:
+    output=output+str(hour)+":"
+minte=(val%3600)//60
+output=output+str(minte)+":"
+sec=(val%3600)%60
+output=output+str(sec)
+print(output)
