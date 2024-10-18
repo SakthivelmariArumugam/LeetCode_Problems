@@ -3,28 +3,32 @@ import java.util.Scanner;
 public class Luo_Palindrome_String {
     public static int fun(Scanner sc)
     {
-        String s=sc.nextLine();
+        String s1=sc.nextLine();
         int l=0;
-        int r=s.length();
+        int r=s1.length()-1;
         int sum1=0;
         int sum2=0;
-        while(l<s.length())
+        while(l<s1.length())
         {
-            if(s.charAt(l)!=s.charAt(s.length()-1))
+            if(s1.charAt(l)!=s1.charAt(s1.length()-1))
             {
-                sum1=s.length()-l-1;
+                sum1=s1.length()-l-1;
                 break;
             }
             l++;
         }
-        while(r>=0)
+        while(r>0)
         {
-            if(s.charAt(0)!=s.charAt(r))
+            if(s1.charAt(0)!=s1.charAt(r))
             {
                 sum2=r+1;
                 break;
             }
             r--;
+        }
+        if(sum1==0 && sum2==0)
+        {
+            return -1;
         }
         if(sum1>sum2)
         {
@@ -37,11 +41,12 @@ public class Luo_Palindrome_String {
     {
         Scanner sc=new Scanner(System.in);
         int n=sc.nextInt();
-        int a[]=new int[n];
-        for(int i=0;i<n;i++)
-        {
-            int a1=fun(sc);
-            a[i]=a1;
+        sc.nextLine();
+        for(int i=1;i<=n;i++) {
+
+            int a1 = fun(sc);
+            System.out.println(a1);
         }
+
     }
 }
