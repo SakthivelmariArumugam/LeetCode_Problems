@@ -33,7 +33,7 @@ public class Luo_Palindrome_String {
         return sum2;
 
     }
-    public static void Main(String args)
+    public static void main(String[] args)
     {
         Scanner sc=new Scanner(System.in);
         int n=sc.nextInt();
